@@ -36,6 +36,9 @@ from humps.main import _separate_words
         ("aB", "a_B"),
         # Fixed issue #201. 2021-10-12
         ("testNTest", "test_N_Test"),
+        # Multi-digit: lowercase + digits + uppercase stays together
+        ("Image12Text", "Image12Text"),
+        ("abc12Def", "abc12_Def"),
     ],
 )
 def test_separate_words(input_str, expected_output):

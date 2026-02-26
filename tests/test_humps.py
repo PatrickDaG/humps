@@ -24,6 +24,13 @@ def test_converting_strings():
         ("memMB", "mem_mb"),
         # Fixed issue #258
         ("B52Thing", "b52_thing"),
+        ("Image2Text", "image2text"),
+        ("_Image2Text", "_image2text"),
+        ("_Image2Text__", "_image2text__"),
+        # Multi-digit: lowercase + digits + uppercase stays together
+        ("Image12Text", "image12text"),
+        ("abc12Def", "abc12_def"),
+        ("item99Name", "item99_name"),
     ],
 )
 def test_camelized_acronyms(input_str, expected_output):
